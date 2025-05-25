@@ -1,0 +1,13 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  flex-wrap: wrap;
+  border: 2px solid black;
+  margin: 0.25rem;
+
+  &__image {
+    height: 20vh;
+    width: "100%";
+  }
+}
