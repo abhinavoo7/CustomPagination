@@ -1,3 +1,5 @@
+import { PAGINATION_BUTTONS_TEXT } from "../lib/Constants";
+
 const Pagination = ({
   noOfPages,
   currentPage,
@@ -12,11 +14,14 @@ const Pagination = ({
         onClick={handlePrev}
         disabled={currentPage === 0}
       >
-        Left Arrow
+        {PAGINATION_BUTTONS_TEXT.PREV_BUTTON}
       </button>
       {[...Array(noOfPages).keys()].map((n) => (
         <button
-          className={"pagination-btn" + (n === currentPage ? " active" : "")}
+          className={
+            "pagination-btn" +
+            (n === currentPage ? " pagination-btn--active" : "")
+          }
           key={n}
           onClick={() => {
             handlePageChange(n);
@@ -30,7 +35,7 @@ const Pagination = ({
         onClick={handleNext}
         disabled={currentPage === noOfPages - 1}
       >
-        Right Arrow
+        {PAGINATION_BUTTONS_TEXT.NEXT_BUTTON}
       </button>
     </div>
   );
